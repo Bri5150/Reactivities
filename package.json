@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "fomantic-ui": "^2.8.8"
+  },
+  "name": "reactivities",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bri5150/Reactivities.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bri5150/Reactivities/issues"
+  },
+  "homepage": "https://github.com/Bri5150/Reactivities#readme",
+  "description": ""
+}
