@@ -1,6 +1,9 @@
-import axios, { AxiosResponse } from 'axios';
+import axios, { AxiosError, AxiosResponse } from 'axios';
+import { useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import { Activity } from '../models/activity';
+import { store } from '../stores/store';
 
 
 
@@ -16,12 +19,43 @@ axios.defaults.baseURL = 'http://localhost:5000/api'
 
 //fake delay
 axios.interceptors.response.use(async response => {
-    try {
+    
         await sleep(1000);
         return response;
-    } catch {
-        return await (Promise.reject('err'))
-    }    
+    
+}, (error: AxiosError) => {
+    const { data, status,config } = error.response!;
+    switch (status) {
+        case 400:
+
+            if (data.errors) {
+                const modalStateErrors = [];
+                for (const key in data.errors) {
+                    if (data.errors[key]) {
+                        modalStateErrors.push(data.errors[key])
+                    }
+                }
+                throw modalStateErrors.flat();
+            } else {
+                toast.error(data);
+            }
+
+            break;
+         case 401:
+            toast.error('unauthorized');
+            break;
+        case 404:
+            let history = useHistory();
+            history.push('/not-found');
+            toast.error('not-found')
+            break;
+        case 500:
+            store.commonStore.setServerError(data);
+            break;
+
+    } 
+    return Promise.reject(error);
+
 });
 
 
