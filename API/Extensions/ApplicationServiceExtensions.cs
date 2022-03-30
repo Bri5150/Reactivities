@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Application.Activities;
 using Application.Core;
+using Application.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Persistence;
+using InfraStructure.Security;
 
 namespace API.Extensions
 {
@@ -37,6 +39,7 @@ namespace API.Extensions
            
            services.AddMediatR(typeof(List.Handler).Assembly);
            services.AddAutoMapper(typeof(MappingProfiles).Assembly);
+           services.AddScoped<IUserAccessor, UserAccessor>();
            return services;
         }
     }

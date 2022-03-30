@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "frontend", "frontend\frontend.esproj", "{560B3A72-F220-45A6-8656-624FC2DD3FFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfraStructure", "Infrastructure\InfraStructure.csproj", "{976FA116-D086-44F2-9139-CB4FCE27C0DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{560B3A72-F220-45A6-8656-624FC2DD3FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{560B3A72-F220-45A6-8656-624FC2DD3FFD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{560B3A72-F220-45A6-8656-624FC2DD3FFD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{976FA116-D086-44F2-9139-CB4FCE27C0DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{976FA116-D086-44F2-9139-CB4FCE27C0DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{976FA116-D086-44F2-9139-CB4FCE27C0DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{976FA116-D086-44F2-9139-CB4FCE27C0DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
