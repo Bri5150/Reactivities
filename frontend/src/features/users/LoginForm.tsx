@@ -12,12 +12,12 @@ export default observer(function LoginForm(){
 
    
     const { userStore } = useStore();
-    //const history = useHistory();
-    //if (userStore.isLoggedIn) history.push('/activities')
-   
-    if (userStore.isLoggedIn) {
-        return <Redirect to='/activities' />
+    const history = useHistory();
+    function handleFormSubmit() {
+        history.push('/activities')
     }
+
+
 
     return (
         <Formik
@@ -27,7 +27,8 @@ export default observer(function LoginForm(){
                 userStore.login(values)
                     .catch(error =>
                         setErrors({ error: 'Invalid email or password' })
-                    )                
+                    ).then(handleFormSubmit)
+                
             }
             >
 
