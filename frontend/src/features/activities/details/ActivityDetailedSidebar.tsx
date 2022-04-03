@@ -50,7 +50,7 @@ export default observer(function ActivityDetailedSidebar({ activity: { attendees
                                 <Item.Extra style={{ color: 'orange' }}>Following</Item.Extra>
                             </Item.Content>
                         </Item>
-                    ))};
+                    ))}
 
                 </List>
             </Segment>

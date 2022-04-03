@@ -17,6 +17,7 @@ import ServerError from '../../features/errors/ServerError';
 import LoginForm from '../../features/users/LoginForm';
 import ModalContainer from '../../common/modals/ModalContainer';
 import modalStore from '../stores/modalStore';
+import ProfilePage from '../../features/profiles/ProfilePage';
 
 
 function App() {  
@@ -58,11 +59,13 @@ function App() {
                                 <Route exact path='/activities' component={ActivityDashboard} />
                                 <Route path='/activities/:id' component={ActivityDetails} />
                                 <Route key={location.key} path={['/createActivity', '/manage/:id']} component={ActivityForm} />
+                                <Route path='/profiles/:username' component={ProfilePage} />
                                 <Route path='/errors' component={TestErrors} />
                                 <Route path='/server-error' component={ServerError} />
                                 <Route path='/login' component={LoginForm} />
                                 <Route exact path='/' component={App} />
                                 <Route component={NotFound} />
+
                             </Switch>
 
 
