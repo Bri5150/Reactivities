@@ -1,4 +1,5 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
+import { profile } from 'console';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -76,9 +77,9 @@ axios.interceptors.response.use(async response => {
 const responseBody = <T> (response: AxiosResponse<T>) => response.data;
 
 const requests = {
-    get: <T> (url: string) => axios.get<T>(url).then(responseBody),
-    post: <T> (url: string, body: {}) => axios.post<T>(url,body).then(responseBody),
-    put: <T> (url: string, body: {}) => axios.put<T>(url, body).then(responseBody),
+    get: <T>(url: string) => axios.get<T>(url).then(responseBody),
+    post: <T>(url: string, body: {}) => axios.post<T>(url,body).then(responseBody),
+    put: <T>(url: string, body: {}) => axios.put<T>(url, body).then(responseBody),
     del: <T>(url: string) => axios.delete<T>(url).then(responseBody),
 }
 
@@ -107,7 +108,8 @@ const Profiles = {
         })
     },
     setMainPhoto: (id: string) => requests.post(`/photos/${id}/setMain`, {}),
-    deletePhoto: (id: string) => requests.del (`/photos/${id}`)
+    deletePhoto: (id: string) => requests.del(`/photos/${id}`),
+    updateProfile: (profile: Partial<Profile>) => requests.put(`/profiles`,profile)
 }
 
 
