@@ -8,11 +8,14 @@ import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
 import { store, StoreContext } from './app/stores/store';
 import { BrowserRouter } from 'react-router-dom';
+import ScrollToTop from './app/layout/ScrollToTop';
+import PrivateRoute from './app/layout/PrivateRoute';
 
 
 ReactDOM.render( 
     <StoreContext.Provider value={store}>
-        <BrowserRouter>
+        <BrowserRouter>            
+        <ScrollToTop />
         <App />
         </BrowserRouter>
         

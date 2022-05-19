@@ -75,7 +75,7 @@ export default observer(function ActivityDetailedChat({activityId}: Props) {
                 <Comment.Group>
                     {commentStore.comments.map(comment => (
                         <Comment key={comment.id }>
-                            <Comment.Avatar src={comment.image || '/assents/user.png'} />
+                            <Comment.Avatar src={comment.image || '/assets/user.png'} />
                             <Comment.Content>
                                 <Comment.Author as={Link} to={`/profiles/${comment.username}`}>{comment.displayName}</Comment.Author>
                                 <Comment.Metadata>
@@ -84,7 +84,7 @@ export default observer(function ActivityDetailedChat({activityId}: Props) {
                                 <Comment.Text style={{ whiteSpace: 'pre-wrap' }}>{comment.body}</Comment.Text>                            
                         </Comment.Content>
                         </Comment>
-                    ))}       
+                    ))}       4
 
                     
                     
